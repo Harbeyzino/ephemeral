@@ -19,34 +19,45 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-lg transition-all duration-300 hover:shadow-md animate-fade-in">
-      <Link to={`/products/${product.id}`} className="block">
-        <div className="relative aspect-square overflow-hidden">
+    <div className="bg-white rounded-md shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col h-full animate-fade-in">
+      <Link to={`/products/${product.id}`} className="flex flex-col h-full">
+        <div className="relative">
           <img 
             src={product.image} 
             alt={product.name} 
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
+            className="w-full aspect-square object-cover rounded-t-md" 
           />
           {product.featured && (
-            <div className="absolute top-2 left-2 bg-ephemera-purple text-white text-xs font-medium px-2 py-1 rounded-full">
+            <div className="absolute top-2 left-2 bg-orange-500 text-white text-xs font-medium px-2 py-1 rounded-full">
               Featured
+            </div>
+          )}
+          {!product.inStock && (
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+              <span className="text-white font-medium px-2 py-1">Out of Stock</span>
             </div>
           )}
         </div>
         
-        <div className="p-4">
-          <h3 className="mt-1 text-lg font-medium text-gray-900 line-clamp-1">{product.name}</h3>
-          <p className="mt-1 text-sm text-gray-500 line-clamp-2">{product.category}</p>
+        <div className="p-3 flex flex-col flex-grow">
+          <div className="flex-grow">
+            <h3 className="text-sm font-medium text-gray-900 line-clamp-1">{product.name}</h3>
+            <p className="mt-1 text-xs text-gray-500 capitalize">{product.category}</p>
+          </div>
+          
           <div className="mt-2 flex items-center justify-between">
-            <p className="text-lg font-medium text-gray-900">${product.price.toFixed(2)}</p>
+            <div>
+              <p className="text-sm font-bold text-orange-500">${product.price.toFixed(2)}</p>
+            </div>
             <Button 
               onClick={handleAddToCart} 
               variant="outline" 
-              size="sm" 
-              className="opacity-0 group-hover:opacity-100 transition-opacity border-ephemera-purple text-ephemera-purple hover:text-white hover:bg-ephemera-purple"
+              size="sm"
+              className="h-8 w-8 p-0 border-gray-300 rounded-full"
+              disabled={!product.inStock}
             >
-              <ShoppingBag className="h-4 w-4 mr-1" />
-              Add
+              <ShoppingBag className="h-4 w-4" />
+              <span className="sr-only">Add to cart</span>
             </Button>
           </div>
         </div>

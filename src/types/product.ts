@@ -4,10 +4,14 @@ export interface Product {
   name: string;
   description: string;
   price: number;
+  discountPrice?: number;
   image: string;
   category: string;
   featured?: boolean;
   inStock: boolean;
+  rating?: number;
+  ratingCount?: number;
+  badges?: string[];
 }
 
 export interface Category {
