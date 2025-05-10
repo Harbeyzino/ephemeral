@@ -5,7 +5,8 @@ export interface Product {
   description: string;
   price: number;
   discountPrice?: number;
-  image: string;
+  images: string[];  // Changed from image to images array
+  image: string;     // Keep for backward compatibility
   category: string;
   featured?: boolean;
   inStock: boolean;

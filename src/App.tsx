@@ -14,6 +14,7 @@ import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Account from "./pages/Account";
+import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="account" element={<Account />} />
+              <Route path="favorites" element={<Favorites />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
