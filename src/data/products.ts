@@ -8,6 +8,11 @@ export const products: Product[] = [
     description: "Handcrafted silk scarf with a unique celestial pattern that changes appearance depending on how it's draped. Made from sustainably sourced silk using traditional techniques.",
     price: 89.99,
     image: "https://images.unsplash.com/photo-1584592174765-c5ebd8149f6c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1584592174765-c5ebd8149f6c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1584592174765-c5ebd8149f6c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1", 
+      "https://images.unsplash.com/photo-1584592174765-c5ebd8149f6c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "accessories",
     featured: true,
     inStock: true
@@ -18,6 +23,11 @@ export const products: Product[] = [
     description: "Each vase is uniquely handcrafted by master ceramicists. Perfect for displaying dried flowers or as a standalone sculptural piece.",
     price: 129.99,
     image: "https://images.unsplash.com/photo-1612196808214-b40b927fe6d9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1612196808214-b40b927fe6d9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1612196808214-b40b927fe6d9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1612196808214-b40b927fe6d9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "home",
     inStock: true
   },
@@ -27,6 +37,11 @@ export const products: Product[] = [
     description: "Limited edition botanical print on museum-quality canvas. Each piece is numbered and comes with a certificate of authenticity.",
     price: 159.99,
     image: "https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "art",
     featured: true,
     inStock: true
@@ -37,6 +52,11 @@ export const products: Product[] = [
     description: "Set of three single-origin coffees, each with distinct flavor profiles. Ethically sourced and roasted in small batches.",
     price: 49.99,
     image: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "food",
     inStock: true
   },
@@ -46,6 +66,11 @@ export const products: Product[] = [
     description: "Minimalist earrings handmade from recycled brass. Light enough for all-day wear while making a distinctive statement.",
     price: 69.99,
     image: "https://images.unsplash.com/photo-1630019852942-f89202989a59?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1630019852942-f89202989a59?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1630019852942-f89202989a59?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1630019852942-f89202989a59?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "jewelry",
     featured: true,
     inStock: true
@@ -56,6 +81,11 @@ export const products: Product[] = [
     description: "Each journal is carefully crafted using traditional bookbinding techniques. Features premium leather cover and acid-free pages.",
     price: 79.99,
     image: "https://images.unsplash.com/photo-1518893494097-8bc7296abaa6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1518893494097-8bc7296abaa6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1518893494097-8bc7296abaa6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1518893494097-8bc7296abaa6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "stationery",
     inStock: true
   },
@@ -65,6 +95,11 @@ export const products: Product[] = [
     description: "Luxuriously soft throw blanket woven from ethically sourced merino wool. Perfect for cool evenings and adding texture to any space.",
     price: 149.99,
     image: "https://images.unsplash.com/photo-1580374004682-23dec7298a2e?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1580374004682-23dec7298a2e?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1580374004682-23dec7298a2e?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1580374004682-23dec7298a2e?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "home",
     inStock: true
   },
@@ -74,6 +109,11 @@ export const products: Product[] = [
     description: "Each pendant light is uniquely crafted by skilled artisans. The subtle color variations ensure no two pieces are exactly alike.",
     price: 199.99,
     image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "home",
     featured: true,
     inStock: true
@@ -84,6 +124,11 @@ export const products: Product[] = [
     description: "Set of eight letterpress cards featuring intricate botanical designs. Printed on premium recycled cotton paper.",
     price: 35.99,
     image: "https://images.unsplash.com/photo-1593806812862-1dc510b769a8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1593806812862-1dc510b769a8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1593806812862-1dc510b769a8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1593806812862-1dc510b769a8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "stationery",
     inStock: true
   },
@@ -93,6 +138,11 @@ export const products: Product[] = [
     description: "Each bowl is skillfully carved from a single piece of sustainable hardwood, showcasing the natural grain patterns.",
     price: 119.99,
     image: "https://images.unsplash.com/photo-1606402179428-a57976d71fa4?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1606402179428-a57976d71fa4?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1606402179428-a57976d71fa4?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1606402179428-a57976d71fa4?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "kitchen",
     inStock: true
   },
@@ -102,6 +152,11 @@ export const products: Product[] = [
     description: "Signed and numbered art print from acclaimed artist. Museum-quality printing on archival paper.",
     price: 189.99,
     image: "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "art",
     inStock: true
   },
@@ -111,6 +166,11 @@ export const products: Product[] = [
     description: "Set of three hand-poured candles made with organic soy wax and premium essential oils for a clean, long-lasting burn.",
     price: 59.99,
     image: "https://images.unsplash.com/photo-1603006905003-be475563f266?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+    images: [
+      "https://images.unsplash.com/photo-1603006905003-be475563f266?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800",
+      "https://images.unsplash.com/photo-1603006905003-be475563f266?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=1",
+      "https://images.unsplash.com/photo-1603006905003-be475563f266?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
+    ],
     category: "home",
     inStock: true
   }
