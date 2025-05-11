@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { Facebook, Linkedin, Mail } from "lucide-react";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -26,6 +27,14 @@ const Register = () => {
       toast.success("Account created successfully!");
       setIsSubmitting(false);
     }, 1000);
+  };
+
+  const handleSocialSignup = (provider: string) => {
+    toast.info(`Signing up with ${provider}...`);
+    // Simulate social signup
+    setTimeout(() => {
+      toast.success(`Account created with ${provider} successfully!`);
+    }, 1500);
   };
 
   return (
@@ -120,6 +129,42 @@ const Register = () => {
             >
               {isSubmitting ? "Creating account..." : "Create Account"}
             </Button>
+
+            <div className="relative my-4">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-white text-gray-500">Or sign up with</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => handleSocialSignup("Facebook")}
+                className="w-full"
+              >
+                <Facebook className="h-5 w-5 text-blue-600" />
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => handleSocialSignup("Google")}
+                className="w-full"
+              >
+                <Mail className="h-5 w-5 text-red-500" />
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => handleSocialSignup("LinkedIn")}
+                className="w-full"
+              >
+                <Linkedin className="h-5 w-5 text-blue-700" />
+              </Button>
+            </div>
           </form>
           
           <div className="mt-6 text-center">
