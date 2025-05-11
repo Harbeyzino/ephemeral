@@ -1,4 +1,3 @@
-
 import { Product, Category } from "@/types/product";
 
 export const products: Product[] = [
@@ -15,7 +14,9 @@ export const products: Product[] = [
     ],
     category: "accessories",
     featured: true,
-    inStock: true
+    inStock: true,
+    rating: 4.8,
+    ratingCount: 42
   },
   {
     id: 2,
@@ -29,7 +30,9 @@ export const products: Product[] = [
       "https://images.unsplash.com/photo-1612196808214-b40b927fe6d9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800&alt=2"
     ],
     category: "home",
-    inStock: true
+    inStock: true,
+    rating: 4.6,
+    ratingCount: 28
   },
   {
     id: 3,

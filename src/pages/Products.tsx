@@ -33,13 +33,13 @@ const Products = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-4 bg-gray-100">
-      <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
-        <h1 className="text-xl font-medium text-gray-800">All Products</h1>
+    <div className="container mx-auto px-4 py-4 bg-gray-100 dark:bg-gray-900">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 mb-4">
+        <h1 className="text-xl font-medium text-gray-800 dark:text-gray-200">All Products</h1>
         {activeCategory && (
           <div className="flex items-center mt-2">
-            <span className="text-sm text-gray-500 mr-2">Category:</span>
-            <div className="flex items-center bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">
+            <span className="text-sm text-gray-500 dark:text-gray-400 mr-2">Category:</span>
+            <div className="flex items-center bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded-full text-xs">
               <span className="capitalize">{activeCategory}</span>
               <button 
                 onClick={() => handleCategoryFilter(null)}
@@ -54,7 +54,7 @@ const Products = () => {
       </div>
       
       {/* Category filters */}
-      <div className="bg-white rounded-lg shadow-sm p-4 mb-4 overflow-x-auto">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 mb-4 overflow-x-auto">
         <div className="flex space-x-2">
           <Button
             size="sm"
@@ -82,7 +82,7 @@ const Products = () => {
       </div>
       
       {/* Products grid */}
-      <div className="bg-white rounded-lg shadow-sm p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4">
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-4">
             {filteredProducts.map(product => (
@@ -91,11 +91,11 @@ const Products = () => {
           </div>
         ) : (
           <div className="text-center py-8">
-            <h3 className="text-lg text-gray-600">No products found</h3>
+            <h3 className="text-lg text-gray-600 dark:text-gray-400">No products found</h3>
             <Button 
               onClick={() => handleCategoryFilter(null)} 
               variant="link" 
-              className="text-orange-500 mt-2"
+              className="text-orange-500 dark:text-orange-400 mt-2"
             >
               Clear filters
             </Button>

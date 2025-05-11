@@ -92,3 +92,12 @@
     @apply text-2xl lg:text-3xl;
   }
 }
+
+/* Dark mode transitions */
+.dark body {
+  color-scheme: dark;
+}
+
+html {
+  transition: background-color 0.3s ease;
+}

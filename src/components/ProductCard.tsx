@@ -44,7 +44,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <div className="bg-white rounded-md shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col h-full animate-fade-in">
+    <div className="bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col h-full animate-fade-in">
       <Link to={`/products/${product.id}`} className="flex flex-col h-full">
         <div className="relative">
           <img 
@@ -57,9 +57,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
               onClick={handleAddToFavorites}
               variant="ghost" 
               size="sm"
-              className="h-8 w-8 p-0 bg-white/70 hover:bg-white rounded-full shadow-sm"
+              className="h-8 w-8 p-0 bg-white/70 dark:bg-gray-800/70 hover:bg-white dark:hover:bg-gray-700 rounded-full shadow-sm"
             >
-              <Heart className="h-4 w-4 text-gray-700 hover:text-red-500" />
+              <Heart className="h-4 w-4 text-gray-700 dark:text-gray-300 hover:text-red-500" />
               <span className="sr-only">Add to favorites</span>
             </Button>
           </div>
@@ -82,8 +82,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
         
         <div className="p-3 flex flex-col flex-grow">
           <div className="flex-grow">
-            <h3 className="text-sm font-medium text-gray-900 line-clamp-1">{product.name}</h3>
-            <p className="mt-1 text-xs text-gray-500 capitalize">{product.category}</p>
+            <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 line-clamp-1">{product.name}</h3>
+            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400 capitalize">{product.category}</p>
             
             {/* Rating stars if available */}
             {product.rating && (
@@ -93,7 +93,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                     <svg
                       key={star}
                       className={`w-3 h-3 ${
-                        star <= Math.round(product.rating || 0) ? "text-yellow-400" : "text-gray-300"
+                        star <= Math.round(product.rating || 0) ? "text-yellow-400" : "text-gray-300 dark:text-gray-600"
                       }`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -102,7 +102,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                     </svg>
                   ))}
                 </div>
-                <span className="ml-1 text-xs text-gray-500">
+                <span className="ml-1 text-xs text-gray-500 dark:text-gray-400">
                   ({product.ratingCount || 0})
                 </span>
               </div>
@@ -113,18 +113,18 @@ const ProductCard = ({ product }: ProductCardProps) => {
             <div>
               {product.discountPrice ? (
                 <div>
-                  <p className="text-sm font-bold text-orange-500">${product.discountPrice.toFixed(2)}</p>
-                  <p className="text-xs text-gray-500 line-through">${product.price.toFixed(2)}</p>
+                  <p className="text-sm font-bold text-orange-500 dark:text-orange-400">${product.discountPrice.toFixed(2)}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 line-through">${product.price.toFixed(2)}</p>
                 </div>
               ) : (
-                <p className="text-sm font-bold text-orange-500">${product.price.toFixed(2)}</p>
+                <p className="text-sm font-bold text-orange-500 dark:text-orange-400">${product.price.toFixed(2)}</p>
               )}
             </div>
             <Button 
               onClick={handleAddToCart} 
               variant="outline" 
               size="sm"
-              className="h-8 w-8 p-0 border-gray-300 rounded-full"
+              className="h-8 w-8 p-0 border-gray-300 dark:border-gray-600 rounded-full"
               disabled={!product.inStock}
             >
               <ShoppingBag className="h-4 w-4" />
