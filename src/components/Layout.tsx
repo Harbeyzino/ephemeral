@@ -6,10 +6,11 @@ import Footer from "./Footer";
 import AdBanner from "./AdBanner";
 import MobileBottomNav from "./MobileBottomNav";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useLoginPopup } from "@/contexts/LoginPopupContext";
 
 const Layout = () => {
   const isMobile = useIsMobile();
-
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

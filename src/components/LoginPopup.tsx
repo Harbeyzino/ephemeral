@@ -1,11 +1,16 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 import { Facebook, Linkedin, Mail } from "lucide-react";
+import { toast } from "sonner";
 
-const Login = () => {
+interface LoginPopupProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const LoginPopup = ({ isOpen, onClose }: LoginPopupProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,6 +23,7 @@ const Login = () => {
     setTimeout(() => {
       toast.success("Logged in successfully!");
       setIsSubmitting(false);
+      onClose();
     }, 1000);
   };
 
@@ -26,23 +32,26 @@ const Login = () => {
     // Simulate social login
     setTimeout(() => {
       toast.success(`Logged in with ${provider} successfully!`);
+      onClose();
     }, 1500);
   };
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-md mx-auto">
-        <h1 className="text-3xl font-medium text-center text-gray-900 mb-8">Sign In</h1>
+    <Sheet open={isOpen} onOpenChange={onClose}>
+      <SheetContent className="sm:max-w-md">
+        <SheetHeader>
+          <SheetTitle className="text-2xl font-medium text-center">Sign In</SheetTitle>
+        </SheetHeader>
         
-        <div className="bg-white p-8 border rounded-lg shadow-sm">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="mt-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="popup-email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email Address
               </label>
               <input
                 type="email"
-                id="email"
+                id="popup-email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -51,12 +60,12 @@ const Login = () => {
             </div>
             
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="popup-password" className="block text-sm font-medium text-gray-700 mb-1">
                 Password
               </label>
               <input
                 type="password"
-                id="password"
+                id="popup-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -67,19 +76,15 @@ const Login = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
-                  id="remember-me"
+                  id="popup-remember-me"
                   name="remember-me"
                   type="checkbox"
                   className="h-4 w-4 text-ephemera-purple focus:ring-ephemera-purple border-gray-300 rounded"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
+                <label htmlFor="popup-remember-me" className="ml-2 block text-sm text-gray-700">
                   Remember me
                 </label>
               </div>
-              
-              <a href="#" className="text-sm text-ephemera-purple hover:underline">
-                Forgot your password?
-              </a>
             </div>
             
             <Button 
@@ -95,7 +100,7 @@ const Login = () => {
                 <div className="w-full border-t border-gray-300"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                <span className="px-2 bg-background text-gray-500">Or continue with</span>
               </div>
             </div>
 
@@ -130,15 +135,15 @@ const Login = () => {
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               Don't have an account?{" "}
-              <Link to="/register" className="text-ephemera-purple hover:underline font-medium">
+              <a href="/register" className="text-ephemera-purple hover:underline font-medium" onClick={() => onClose()}>
                 Sign Up
-              </Link>
+              </a>
             </p>
           </div>
         </div>
-      </div>
-    </div>
+      </SheetContent>
+    </Sheet>
   );
 };
 
-export default Login;
+export default LoginPopup;
