@@ -3,8 +3,9 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
-import { Menu, ShoppingBag, X, Search, User, Heart } from "lucide-react";
+import { Menu, ShoppingBag, X, Search, User, Heart, LogIn } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useLoginPopup } from "@/hooks/use-login-popup";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +13,7 @@ const Navbar = () => {
   const location = useLocation();
   const { cartCount } = useCart();
   const isMobile = useIsMobile();
+  const { openLoginPopup, openRegisterPopup } = useLoginPopup();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -72,10 +74,13 @@ const Navbar = () => {
           {/* Right side icons - desktop only */}
           {!isMobile && (
             <div className="hidden md:flex items-center space-x-6">
-              <Link to="/login" className="flex flex-col items-center text-gray-600 hover:text-ephemera-purple">
-                <User size={20} />
-                <span className="text-xs mt-1">Account</span>
-              </Link>
+              <button 
+                onClick={openLoginPopup}
+                className="flex flex-col items-center text-gray-600 hover:text-ephemera-purple"
+              >
+                <LogIn size={20} />
+                <span className="text-xs mt-1">Sign In</span>
+              </button>
               <Link to="/favorites" className="flex flex-col items-center text-gray-600 hover:text-ephemera-purple">
                 <Heart size={20} />
                 <span className="text-xs mt-1">Favorites</span>
@@ -146,13 +151,24 @@ const Navbar = () => {
               >
                 All Products
               </Link>
-              <Link
-                to="/login"
-                onClick={closeMenu}
-                className="py-2 px-4 hover:bg-gray-100 rounded-md"
+              <button
+                onClick={() => {
+                  openLoginPopup();
+                  closeMenu();
+                }}
+                className="text-left py-2 px-4 hover:bg-gray-100 rounded-md"
               >
-                Account
-              </Link>
+                Sign In
+              </button>
+              <button
+                onClick={() => {
+                  openRegisterPopup();
+                  closeMenu();
+                }}
+                className="text-left py-2 px-4 hover:bg-gray-100 rounded-md"
+              >
+                Create Account
+              </button>
               <Link
                 to="/favorites"
                 onClick={closeMenu}

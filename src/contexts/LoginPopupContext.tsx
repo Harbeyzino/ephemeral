@@ -4,21 +4,55 @@ import LoginPopup from "@/components/LoginPopup";
 
 interface LoginPopupContextType {
   openLoginPopup: () => void;
-  closeLoginPopup: () => void;
+  openRegisterPopup: () => void;
+  closePopup: () => void;
+  isLoginOpen: boolean;
+  isRegisterOpen: boolean;
 }
 
 const LoginPopupContext = createContext<LoginPopupContextType | undefined>(undefined);
 
 export function LoginPopupProvider({ children }: { children: ReactNode }) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
-  const openLoginPopup = () => setIsLoginOpen(true);
-  const closeLoginPopup = () => setIsLoginOpen(false);
+  const openLoginPopup = () => {
+    setIsLoginOpen(true);
+    setIsRegisterOpen(false);
+  };
+
+  const openRegisterPopup = () => {
+    setIsRegisterOpen(true);
+    setIsLoginOpen(false);
+  };
+
+  const closePopup = () => {
+    setIsLoginOpen(false);
+    setIsRegisterOpen(false);
+  };
 
   return (
-    <LoginPopupContext.Provider value={{ openLoginPopup, closeLoginPopup }}>
+    <LoginPopupContext.Provider value={{ 
+      openLoginPopup, 
+      openRegisterPopup, 
+      closePopup, 
+      isLoginOpen, 
+      isRegisterOpen 
+    }}>
       {children}
-      <LoginPopup isOpen={isLoginOpen} onClose={closeLoginPopup} />
+      <LoginPopup 
+        isLoginOpen={isLoginOpen}
+        isRegisterOpen={isRegisterOpen}
+        onClose={closePopup}
+        onSwitchToRegister={() => {
+          setIsLoginOpen(false);
+          setIsRegisterOpen(true);
+        }}
+        onSwitchToLogin={() => {
+          setIsRegisterOpen(false);
+          setIsLoginOpen(true);
+        }}
+      />
     </LoginPopupContext.Provider>
   );
 }
